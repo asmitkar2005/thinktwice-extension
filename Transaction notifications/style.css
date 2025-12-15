@@ -1,0 +1,100 @@
+/* ===============================
+   FULLSCREEN OVERLAY
+================================ */
+#ios-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: fadeIn 0.3s ease;
+}
+
+#ios-overlay.hide {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* ===============================
+   IOS BOTTOM SHEET
+================================ */
+.ios-sheet {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px 30px;
+  text-align: center;
+  animation: slideUp 0.35s ease-out;
+}
+
+/* Handle bar */
+.ios-handle {
+  width: 40px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 4px;
+  margin: 0 auto 18px;
+}
+
+/* Icon */
+.ios-icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.ios-sheet h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+/* Text */
+.ios-sheet p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.ios-sheet button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ios-sheet button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}

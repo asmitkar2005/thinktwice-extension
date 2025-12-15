@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Shopping Prompt Reminder",
+  "version": "2.1",
+  "description": "Shows a shopping reminder and tracks daily spending awareness",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
